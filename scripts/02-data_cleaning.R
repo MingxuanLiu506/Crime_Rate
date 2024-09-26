@@ -12,7 +12,7 @@ library(tidyverse)
 
 #### Clean data ####
 # Read the original CSV file
-crime_rates_statistics <- read_csv("/Users/liumingxuan/Desktop/crime.csv")
+crime_rates_statistics <- read_csv("data/raw_data/raw_data.csv")
 
 # Select the relevant columns using dplyr's select function from tidyverse
 selected_columns <- crime_rates_statistics%>%
@@ -31,6 +31,6 @@ selected_columns <- crime_rates_statistics%>%
          ASSAULT_RATE_2023)
 
 #### Save data ####
-write_csv(selected_columns, "/Users/liumingxuan/Desktop/STA304 Term Paper 1/clean_data.csv")
+write_csv(selected_columns, "data/clean_data/clean_data.csv")
 
 
