@@ -223,22 +223,17 @@ In general, through data analysis and data review, we found that external distur
 
 # Appendix {-}
 
+# Dataset and Graph Sketches {#sec-appendix-sketches}
 
-# Additional data details
+The dataset used in this paper, and the related sketches generated from the dataset, can be found in the folder named 'sketches' in the folder named 'other' in the GitHub repository
 
-# Model details {#sec-model-details}
+# Additional data details {#sec-appendix-cleaning}
 
-## Posterior predictive check
-
-
-## Diagnostics
-
-
+The process of data cleansing is to extract the columns required for data analysis in this paper and store them in a new csv file.
 
 
 \newpage
 
 
 # References
-
 
