@@ -8,9 +8,10 @@
 # Pre-requisites: Install tidyverse packages
 # Any other information needed? [...UPDATE THIS...]
 
-
 #### Workspace setup ####
 library(tidyverse)
+
+create_github_token()
 
 #### Simulate data ####
 # Set seed for reproducibility

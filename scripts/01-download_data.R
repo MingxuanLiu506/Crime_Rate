@@ -37,5 +37,5 @@ crime_rates_statistics <- crime_rates_resources[8,] %>%
 #### Save data ####
 # change the_raw_data to whatever name you assigned when you downloaded it.
 crime_rates_statistics
-write_csv(crime_rates_statistics,"/Users/liumingxuan/Desktop/crime.csv")
+write_csv(crime_rates_statistics,"data/raw_data.csv")
          
