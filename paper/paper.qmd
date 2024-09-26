@@ -8,6 +8,7 @@ date: 09-21-2024
 date-format: long
 abstract: "This paper focuses on the temporal and spatial trends of burglary and assault crime rates in different urban areas from 2014 to 2023. Through analyzing the data Neighbourhood Crime Rates, it is found that there are significant differences in robbery and attack rates in different regions and different time periods. And crime in some areas continues to increase, while in others it fluctuates or decreases. In addition, it is worth noting that there is also a correlation between population size and assault rates. Based on the research results, this paper provides targeted management schemes and resource reallocation schemes for the government and law enforcement agencies to reduce the community crime rate."
 format: pdf
+toc: true
 number-sections: true
 # The toc parameter used to create a table of contents was obtained from
 # Quarto documentation:
@@ -33,15 +34,13 @@ bibliography: references.bib
 #| warning: false
 #| message: false
 
+#loading packages
 #install.packages("opendatatoronto")
 #install.packages("tidyverse")
+install.packages("here")
 library(opendatatoronto)
 library(tidyverse)
-
-# Retrieve a list of all available data packages from the OpenDataToronto portal
-packages <- list_packages(500)
-# Display the list of available packages
-packages
+library(here)
 ```
 
 
@@ -71,17 +70,9 @@ The R programming language [@citeR] and `tidyverse` [@citetidyverse] were used t
 ```{r}
 #| echo: false
 #| warning: false
-# Search for a specific package on OpenDataToronto by keyword ("Neighbourhood Crime Rates")
-crime_rates_packages <- search_packages("Neighbourhood Crime Rates")
-
-# Retrieve a list of all resources (datasets) available within the found package
-crime_rates_resources <- crime_rates_packages %>%
-  list_package_resources()
-
-crime_rates_statistics <- crime_rates_resources[8,] %>%
-  get_resource()
-
-crime_rates_data = crime_rates_statistics
+# Load the cleaned data which the required columns have been selected.
+selected_columns <- read.csv(here::here("data/clean_data/clean_data.csv"))
+crime_rates_data = selected_columns
 
 ```
 After loading the dataset using the R programming language [@citeR] and the `opendatatoronto` package [@citeopendatatoronto], the `tidyverse` [@citetidyverse] package was used to generate graphs.
