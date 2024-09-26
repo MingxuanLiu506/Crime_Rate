@@ -89,7 +89,6 @@ After loading the dataset using the R programming language [@citeR] and the `ope
 #| fig-cap: "Trends in theft Rates in the 15 neighborhoods with the Highest Average theft Rates and the 15 neighborhoods with the Lowest Theft Rates, 2014-2023"
 
 #### First Graph ####
-library(tidyverse)
 # This code is based on sample from ChatGPT
 
 # Select relevant columns and gather year and theft rate into long format
@@ -233,6 +232,7 @@ The process of data cleansing is to extract the columns required for data analys
 
 
 \newpage
+
 
 
 # References
