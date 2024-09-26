@@ -28,7 +28,8 @@ selected_columns <- crime_rates_statistics%>%
          THEFTOVER_RATE_2022, 
          THEFTOVER_RATE_2023, 
          POPULATION_2023, 
-         ASSAULT_RATE_2023)
+         ASSAULT_RATE_2023,
+         ASSAULT_2023)
 
 #### Save data ####
 write_csv(selected_columns, "data/clean_data/clean_data.csv")

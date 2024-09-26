@@ -12,7 +12,7 @@ library(tidyverse)
 
 #### Test raw data  ####
 # Load the data
-crime_rates_statistics <- read.csv("/Users/liumingxuan/Desktop/crime.csv")
+crime_rates_statistics <- read.csv("data/raw_data/raw_data.csv")
 
 # Select a column (e.g., "AUTOTHEFT_RATE_2015") and check if all values are >= 0
 column_name <- "AUTOTHEFT_RATE_2015"
@@ -23,7 +23,9 @@ if (all(crime_rates_statistics[[column_name]] >= 0, na.rm = TRUE)) {
 }
 
 #### Test clean data ####
+selected_columns <- read_csv("data/clean_data/clean_data.csv")
 # Simulate the dataset as previously defined
+# This code is base on the ChatGPT
 set.seed(123)
 n <- 100
 area_names <- paste("Area", 1:n)
@@ -38,6 +40,7 @@ theftover_rate_2021 <- rnorm(n, mean = 85, sd = 50)
 theftover_rate_2022 <- rnorm(n, mean = 90, sd = 55)
 theftover_rate_2023 <- rnorm(n, mean = 95, sd = 60)
 population_2023 <- rnorm(n, mean = 20000, sd = 5000)
+assault_2023 <- rnorm(n, mean = 95, sd = 60)
 assault_rate_2023 <- rpois(n, lambda = 150)
 
 # Create a data frame
@@ -54,7 +57,8 @@ simulated_data <- data.frame(
   THEFTOVER_RATE_2022 = theftover_rate_2022,
   THEFTOVER_RATE_2023 = theftover_rate_2023,
   POPULATION_2023 = population_2023,
-  ASSAULT_RATE_2023 = assault_rate_2023
+  ASSAULT_RATE_2023 = assault_rate_2023,
+  ASSAULT_2023 = assault_2023
 )
 
 # Define the columns to test
