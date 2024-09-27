@@ -151,6 +151,8 @@ The @fig-theft-rate-trend-2014-to-2023 shows trends for the top 15 and bottom 15
 
 #### Second Graph ####
 
+# This code is based on sample from ChatGPT
+
 # Assuming crime_rates_data is already loaded
 theft_data <- crime_rates_data %>% 
   select(starts_with("THEFTOVER_RATE"), AREA_NAME) %>%
@@ -179,6 +181,8 @@ The overall distribution of theft rates and their outliers for each region betwe
 #| fig-cap: "2023 population and assault rate relations with a scatter diagram"
 #### Third Graph ####
 
+# This code is based on sample from ChatGPT
+
 ggplot(crime_rates_data, aes(x = POPULATION_2023, y = ASSAULT_2023)) +
   geom_point() +
   labs(title = "2023 Population vs 2023 Assault Rate", x = "Population (2023)", y = "Assault Rate (2023)") +
@@ -194,6 +198,8 @@ The @fig-population-and-assault-rate shows that there is no significant linear r
 #| warning: false
 #| fig-cap: "The 20 areas with the highest theft rates in 2023"
 #### fourth Graph ####
+
+# This code is based on sample from ChatGPT
 
 top_areas <- crime_rates_data[order(-crime_rates_data$THEFTOVER_RATE_2023), ][1:20, ]
 
