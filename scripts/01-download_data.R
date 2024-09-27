@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data from opendatatoronto package and 
+# Purpose: Downloads and saves the data from opendatatoronto package and
 # stores the dataset for inclusion in the primary paper.
 # Author: Mingxuan Liu
 # Date: 09-21-2024
@@ -31,11 +31,10 @@ crime_rates_resources <- crime_rates_packages %>%
 crime_rates_resources
 
 # Download the .csv dataset
-crime_rates_statistics <- crime_rates_resources[8,] %>%
+crime_rates_statistics <- crime_rates_resources[8, ] %>%
   get_resource()
 
 #### Save data ####
 # change the_raw_data to whatever name you assigned when you downloaded it.
 crime_rates_statistics
-write_csv(crime_rates_statistics,"data/raw_data/raw_data.csv")
-         
+write_csv(crime_rates_statistics, "data/raw_data/raw_data.csv")

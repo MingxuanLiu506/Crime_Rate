@@ -62,20 +62,21 @@ simulated_data <- data.frame(
 )
 
 # Define the columns to test
-cols_to_test <- c("THEFTOVER_RATE_2014", "THEFTOVER_RATE_2015", "THEFTOVER_RATE_2016", 
-                  "THEFTOVER_RATE_2017", "THEFTOVER_RATE_2018", "THEFTOVER_RATE_2019",
-                  "THEFTOVER_RATE_2020", "THEFTOVER_RATE_2021", "THEFTOVER_RATE_2022", 
-                  "THEFTOVER_RATE_2023", "POPULATION_2023", "ASSAULT_RATE_2023")
+cols_to_test <- c(
+  "THEFTOVER_RATE_2014", "THEFTOVER_RATE_2015", "THEFTOVER_RATE_2016",
+  "THEFTOVER_RATE_2017", "THEFTOVER_RATE_2018", "THEFTOVER_RATE_2019",
+  "THEFTOVER_RATE_2020", "THEFTOVER_RATE_2021", "THEFTOVER_RATE_2022",
+  "THEFTOVER_RATE_2023", "POPULATION_2023", "ASSAULT_RATE_2023"
+)
 
 # Test if values in each column are greater than 0
 for (col in cols_to_test) {
   greater_than_zero <- simulated_data[[col]] > 0
   count_greater_than_zero <- sum(greater_than_zero)
   proportion_greater_than_zero <- mean(greater_than_zero)
-  
+
   print(paste("Column:", col))
   print(paste("Number of values greater than 0:", count_greater_than_zero))
   print(paste("Proportion of values greater than 0:", proportion_greater_than_zero))
   print("----")
 }
-

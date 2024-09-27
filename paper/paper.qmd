@@ -37,10 +37,14 @@ bibliography: references.bib
 #loading packages
 #install.packages("opendatatoronto")
 #install.packages("tidyverse")
-install.packages("here")
+#install.packages("knitr")
+#install.packages("here")
+#install.packages("kableExtra")
 library(opendatatoronto)
 library(tidyverse)
 library(here)
+library(knitr)
+library(kableExtra)
 ```
 
 
@@ -52,7 +56,7 @@ Since 2020, the Covid-19 outbreak has intensified this trend. Thefts have spiked
 
 In order to further explore the spatio-temporal changes of the crime rate in Toronto, this study obtains the crime data of various communities from 2014 to 2023 according to the method described in @sec-data-overview, especially the data of theft and assault rates. Through these data, this paper analyzes the change trend of crime rates in different communities during these years. The differences between community size and crime rate and the fluctuations in different time periods are discussed. In addition, The research focuses on the dynamic change of crime rate in different communities before and after the epidemic (@fig-theft-rate-trend-2014-to-2023 and @fig-Box-plot-of-theft-rates) and the relationship between population density and crime rates in 2023 (@fig-population-and-assault-rate and @fig-Bar-chart-2023-theft-rates). By assessing these dynamics, this paper aims to inform law enforcement and city planners in Toronto, particularly with regard to resource allocation and crime prevention in high-risk neighbourhoods.
 
-The structure of this paper is as follows: {#sec-data-overview} presents the data sources and methodology, {#sec-data-overview} presents the results of the analysis, and {#sec-discussion} discusses the policy implications of the findings, particularly with regard to how to respond to crime hotspots in Toronto.
+The structure of this paper is as follows: @sec-data-overview presents the data sources and methodology, @sec-data-overview presents the results of the analysis, and @sec-discussion discusses the policy implications of the findings, particularly with regard to how to respond to crime hotspots in Toronto.
 
 # Data {#sec-data}
 
@@ -64,7 +68,7 @@ The crime data in this dataset is broken down by the different neighbourhoods of
 
 The variables or measurements included in this analysis are "crime type", referring to various forms of crime and violation, which are called THEFTOVER_RATE_year and ASSAULT_RATE_year in the original data. In addition, the "population number" is used as the comparison data, which is called "POPULATION_2023" in the original data.
 
-The R programming language [@citeR] and `tidyverse` [@citetidyverse] were used to simulate and test the data set. Then, use `opendatatoronto`[@citeopendatatoronto] and `tidyverse` [@citetidyverse] to download Neighbourhood Crime Rates data. Finally, `tidyverse`[@citetidyverse] is used to clean up the original data, select the required data information to clean up the data that does not meet the requirements, and test the cleaned data again.
+The R programming language [@citeR] and `tidyverse` [@citetidyverse] were used to simulate and test the data set. Then, use `opendatatoronto`[@citeopendatatoronto] and `tidyverse` [@citetidyverse] to download Neighbourhood Crime Rates data. Finally, `tidyverse`[@citetidyverse] is used to clean up the original data, select the required data information to clean up the data that does not meet the requirements, the sample of clean data can be found in @tbl-cleaned-data .Then test the cleaned data again.
 
 ## Results {#sec-data-results}
 ```{r}
@@ -77,6 +81,20 @@ crime_rates_data = selected_columns
 ```
 After loading the dataset using the R programming language [@citeR] and the `opendatatoronto` package [@citeopendatatoronto], the `tidyverse` [@citetidyverse] package was used to generate graphs.
 
+```{r}
+#| label: tbl-cleaned-data
+#| tbl-cap: Sample of cleaned lead data 
+#| echo: false
+
+# This code is based on the sample from Alexander (2023).
+data1 <- crime_rates_data[,c(1, 3, 13)]
+
+head(data1, 3) %>%
+  kable(
+    col.names = c("AREA_NAME", "THEFTOVER_RATE_2015", "ASSAULT_RATE_2023"),
+    booktabs = TRUE
+)
+```
 
 ```{r}
 #| label: fig-theft-rate-trend-2014-to-2023
@@ -115,8 +133,7 @@ ggplot(filtered_data, aes(x = Year, y = TheftRate, color = AREA_NAME)) +
        x = "Year",
        y = "Theft rate per 100,000 people") +
   theme_minimal() +
-  theme(legend.position = "bottom") +
-  guides(color = guide_legend(nrow = 2, byrow = TRUE))
+  theme(legend.position = "none")
 ```
 ```
 
