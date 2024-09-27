@@ -11,14 +11,11 @@
 #### Workspace setup ####
 
 #this code base on the sample of ChatGPT
-
-library(tidyverse)
-
-create_github_token()
-
-#### Simulate data ####
 # Load necessary library
 library(tidyverse)
+
+
+#### Simulate data ####
 
 # Set the seed for reproducibility
 set.seed(123)
