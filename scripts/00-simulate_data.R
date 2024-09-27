@@ -6,7 +6,7 @@
 # Contact: mingxuan.liu@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Install tidyverse packages
-# Any other information needed? [...UPDATE THIS...]
+# other information: all code is appropriately styled using styler and lintr.
 
 #### Workspace setup ####
 library(tidyverse)

@@ -6,6 +6,7 @@
 # Contact: mingxuan.liu@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Install the opendatatoronto and tidyverse packages.
+# other information: all code is appropriately styled using styler and lintr.
 
 
 #### Workspace setup ####

@@ -5,6 +5,7 @@
 # Contact: mingxuan.liu@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Run the files "01-download_data.R" and "02-data_cleaning.R".
+# other information: all code is appropriately styled using styler and lintr.
 
 
 #### Workspace setup ####

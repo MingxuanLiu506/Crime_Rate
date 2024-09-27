@@ -1,11 +1,12 @@
 #### Preamble ####
-# Purpose: Select specific columns from the dataset, which is needed in this
+# Purpose: Select specific columns from the dataset, which is needed in this 
 # case are related to theft rates
 # Author:  Mingxuan Liu
 # Date: 09-21-2024
 # Contact: mingxuan.liu@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Run the file "01-download_data.R".
+# other information: all code is appropriately styled using styler and lintr.
 
 #### Workspace setup ####
 library(tidyverse)
