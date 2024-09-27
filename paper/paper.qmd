@@ -46,13 +46,11 @@ library(here)
 
 # Introduction {#sec-introduction}
 
-Community crime has always been an inevitable challenge in the process of urban development, especially theft and assault. With the acceleration of urbanization, the increase of population density and the rise of resource demand, the complexity of crime patterns has also increased. Understanding how crime in different communities changes over time and space becomes critical to the problem of building safe communities. Research shows that urban growth often leads to a non-linear increase in crime rate. @bettencourt2007growth also mentioned that communities with larger populations usually experience higher crime rates. This paper mainly analyzes the data of theft and assault rates of each community from 2014 to 2023. To explore the differences in size and crime rates in different communities and the accompanying time fluctuations.
+Between 2014 and 2023, as urbanization accelerates, the crime dynamics in Toronto change significantly. Crime is concentrated in certain neighborhoods, such as those with poor socioeconomic conditions, where residents tend to face a higher risk of property and violence [@wang2019spatial]. Since 2020, the Covid-19 outbreak has intensified this trend. [@syamsuddin2021effect] noted a spike in thefts in many cities around the world during the pandemic, due to socio-economic instability and reduced social activity caused by lockdowns. Toronto's neighbourhoods are no exception, with economic pressures leading to a marked increase in property crime in some neighbourhoods. In addition, population growth also increases the chance of crime, and the chance of crime is higher in areas with higher population density and resource shortage [@bettencourt2007growth].
 
-This article focuses on two key aspects of crime data. First, by analyzing trends in theft rates between 2014 and 2023, significant differences were found across communities.Through data analysis in this paper and @oliveira2021more argue that some communities experienced high rates of burglary during the decade, while others experienced relatively flat or small fluctuations in crime. In addition, the burglary rate is analyzed using a boxplot to show the distribution of crime rates over time, revealing which areas have consistently high or fluctuated crime rates. The analysis found that the increase in theft rates in some areas from 2019 May have been influenced by different economic and social conditions at the time: By @syamsuddin2021effect, starting in 2019, the global COVID-19 pandemic forced people to work and study from home, and some people lost their source of income.
+Data on Neighbourhood Crime Rates were obtained, as described in @sec-data-overview. This paper mainly analyzes the burglary and assault rates in each community from 2014 to 2023, exploring the differences in community size and crime rates and the accompanying time fluctuations. The research focuses on the dynamic change of crime rate in different communities before and after the epidemic (@fig-theft-rate-trend-2014-to-2023 and @fig-Box-plot-of-theft-rates) and the relationship between population density and crime rates in 2023 (@fig-population-and-assault-rate and @fig-Bar-chart-2023-theft-rates). By assessing these dynamics, we hope to inform crime prevention and resource allocation in Toronto, particularly in high-risk neighbourhoods where there is a long-term need for more police and social resources.
 
-Second, the relationship between population size and assault rates in 2019 suggests that communities with larger populations generally have higher crime rates. According to the @bettencourt2007growth, this verifies the city size effect theory, that is, the expansion of city size may lead to higher social interaction and crime rate. However, the fact that some areas with small population have higher assault rate also indicates that crime rate is also affected by unexpected factors other than population size. By using a bar chart to compare the attack rates of each community in 2023, it is shown that some high-traffic communities have significantly higher attack rates than others.This confirms the crime opportunity theory from @oliveira2021more, which states that more densely populated areas have more crime opportunities.
-
-Through the analysis of these aspects, the time and space dimension of crime are discussed in detail. Through a comprehensive analysis of crime dynamics from different aspects of the data, the burglary rate can reflect the economic state of the community, while the assault crime is often related to social tensions and community security. This paper aims to explore these two categories of crime in depth, assessing how they are evolving in the context of a growing urban population. Finally, the conclusion of the study is to propose targeted management intervention measures to relevant judicial departments and law enforcement agencies and how to effectively carry out crime prevention, such as resource redistribution.
+The structure of this paper is as follows: {#sec-data-overview} presents the data sources and methodology, {#sec-data-overview} presents the results of the analysis, and {#sec-discussion} discusses the policy implications of the findings, particularly with regard to how to respond to crime hotspots in Toronto.
 
 # Data {#sec-data}
 
@@ -76,10 +74,6 @@ crime_rates_data = selected_columns
 
 ```
 After loading the dataset using the R programming language [@citeR] and the `opendatatoronto` package [@citeopendatatoronto], the `tidyverse` [@citetidyverse] package was used to generate graphs.
-
-# Graph
-
-## Graph 1
 
 
 ```{r}
@@ -124,11 +118,8 @@ ggplot(filtered_data, aes(x = Year, y = TheftRate, color = AREA_NAME)) +
 ```
 ```
 
-### Graph 1 Analyse
-
 @fig-theft-rate-trend-2014-to-2023 shows trends in the Top 15 and Bottom 15 Cities by Average Theft Rate from 2014 to 2023. Regardless of the theft rate, most areas show relatively stable crime rate in a long period of time, which may prove that this area has relatively perfect social security management mode and relatively stable life state. In addition, crime rates vary widely in some areas and are generally higher than in others. It is worth noting that between 2019 and 2020, most regions showed a trend of rising theft rates, reflecting changes in social conditions or economic development at the time. Overall, theft rates remained relatively flat in most regions, with only slight fluctuations. In addition, there are significant differences in the theft rate between different regions during the same period, which may be related to different social conditions in different regions, such as law enforcement efforts, economic conditions, population distribution and other factors.
 
-## Graph 2
 
 ```{r}
 #| label: fig-Box-plot-of-theft-rates
@@ -147,11 +138,9 @@ ggplot(theft_data_melted, aes(x = Year, y = TheftRate)) +
   theme(legend.position = "none")
 ```
 
-### Graph 2 Analyse
 
 The overall distribution of theft rates and their outliers for each region between 2014 and 2023 can be studied using @fig-Box-plot-of-theft-rates. First, while the median showed a relatively flat change, the median theft rate increased slightly between 2018 and 2023. In 2020 and 2021 in particular, the median appears to have reached a higher position. In addition, outliers (indicated by black dots) show unusually high theft rates across years. It is worth mentioning that more significant outliers have appeared in 2019, and the number of outliers has increased significantly. This indicates that in 2019 there were a large number of areas with much higher than general theft rates, and that this was the case in multiple areas. Secondly, the quartile distance also showed a certain fluctuation in this year. The reasons for this may be related to changes in the socio-economic environment during the year, changes in enforcement policies, or social unrest.
 
-## Graph 3
 
 ```{r}
 #| label: fig-population-and-assault-rate
@@ -167,11 +156,8 @@ ggplot(crime_rates_data, aes(x = POPULATION_2023, y = ASSAULT_2023)) +
 ```
 
 
-### Graph 3 Analyse
-
 @fig-population-and-assault-rate shows that there is no obvious linear relationship between population and attack rates across regions in 2023. However, it can be found that the attack rate in the more populated areas (close to 30,000 people) seems to be relatively high and has an increasing trend, while the attack rate in the less populated areas is more volatile. And there are several outliers that show very high attack rates in areas with higher populations.
 
-## Graph 4
 
 ```{r}
 #| label: fig-Bar-chart-2023-theft-rates
@@ -195,15 +181,14 @@ ggplot(top_areas, aes(x = reorder(AREA_NAME, THEFTOVER_RATE_2023), y = THEFTOVER
         plot.title = element_text(hjust = 0.5))  
 ```
 
-### Graph 4 Analyse
 
 This bar chart (@fig-Bar-chart-2023-theft-rates) shows the 20 areas with the highest theft rates in Toronto in 2023. The chart shows that the Yonge-Bay Corridor has a significantly higher theft rate than all other areas, at 312.8. Several other areas with high theft rates, such as Humber Summit and Yorkdale-Glen Park, also had relatively high theft rates of 255 and 235.5, respectively. This suggests that the area may have different conditions or characteristics than other areas, such as high traffic or rich commercial clusters that attract thieves.
 
-# Discussion 
+# Discussion {#sec-discussion}
 
 This paper examines community crime dynamics, specifically the patterns of theft and assault across time and region. With the rapid progress of urbanization, the higher crime rate may be related to the increase in population density. This article will discuss the effects of socioeconomic, social unrest, and population on crime rates, based on the analysis of theft and assault rates in each region in previous years.
 
-## First discussion point {#sec-first-point}
+## First discussion point 
 
 First of all, @fig-theft-rate-trend-2014-to-2023 emphasizes the spatial distribution of crime and the importance of analyzing crime in time and space dimensions. The data chart shows that theft rates vary from place to place at different times. Some regions have maintained steady fluctuations, while others have fluctuated more. This is connected with the research of @newton2015crime. They believe that the crime hotspot often changes with time, for example, different time or social and economic events will affect the criminal's motive. Analyzing trends in theft can help develop targeted crime prevention strategies. In addition, we also found that external shocks, such as Covid-19, also have an impact on crime rates. The @fig-Box-plot-of-theft-rates show that outliers have unusually high values in 2019-2020. In particular, the median theft rate in residential areas also increased significantly, possibly due to the socio-economic unrest caused by the pandemic. In 2019, almost most places are in lockdown due to the Covid-19 epidemic. By @syamsuddin2021effect, there is a study in Makassar, Indonesia, also documented a similar trend where burglary rates increased significantly during lockdowns, especially in residential areas where people were forced to stay at home due to social restrictions. This external impact has greatly changed people's way of life. Many people have lost their source of income, and the economic pressure of burglars provides the motive to commit crimes. According to the @syamsuddin2021effect, this significant change in the theft rate verifies the theory of criminal opportunity.
 
