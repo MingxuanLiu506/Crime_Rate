@@ -129,11 +129,18 @@ ggplot(filtered_data, aes(x = Year, y = TheftRate, color = AREA_NAME)) +
 
 #### Second Graph ####
 
-ggplot(theft_data_melted, aes(x = Year, y = TheftRate)) +
-  geom_boxplot(aes(fill = Year)) +
+# Assuming crime_rates_data is already loaded
+theft_data <- crime_rates_data %>% 
+  select(starts_with("THEFTOVER_RATE"), AREA_NAME) %>%
+  pivot_longer(cols = -AREA_NAME, names_to = "Year", values_to = "TheftRate", 
+               names_prefix = "THEFTOVER_RATE_")
+
+# Generate the box plot with ggplot2
+ggplot(theft_data, aes(x = Year, y = TheftRate, fill = Year)) +
+  geom_boxplot() +
   labs(title = "Box plot of theft rates by year (2014-2023)",
        x = "Year",
-       y = "Theft rate (per 100,000 people)") +
+       y = "Theft rate (Per 100,000 people)") +
   theme_minimal() +
   theme(legend.position = "none")
 ```
