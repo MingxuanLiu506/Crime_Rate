@@ -11,12 +11,10 @@ The code used to create this file is adapted from the code provided by chatgpt a
 
 The repo is structured as:
 
--   `data` contains the raw data (crime.csv) as obtained from X.
--   `clean_data` contains the cleaned dataset that was constructed.
--   `input` contains relevant literature, details about LLM chat interactions, and sketches.
+-   `data` contains the raw data and analysis data is the data that has been selected to be used in this paper.
+-   `other` contains relevant literature, details about LLM chat interactions, and sketches.
 -   `paper` contains the files used to generate the paper, including the Quarto document and reference bibliography file, as well as the PDF of the paper. 
 -   `scripts` contains the R scripts used to simulate, download and clean data.
-
 
 ## Statement on LLM usage
 
