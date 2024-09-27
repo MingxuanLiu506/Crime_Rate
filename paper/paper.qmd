@@ -39,12 +39,10 @@ bibliography: references.bib
 #install.packages("tidyverse")
 #install.packages("knitr")
 #install.packages("here")
-#install.packages("kableExtra")
 library(opendatatoronto)
 library(tidyverse)
 library(here)
 library(knitr)
-library(kableExtra)
 ```
 
 
@@ -79,7 +77,7 @@ selected_columns <- read.csv(here::here("data/clean_data/clean_data.csv"))
 crime_rates_data = selected_columns
 
 ```
-After loading the dataset using the R programming language [@citeR] and the `opendatatoronto` package [@citeopendatatoronto], the `tidyverse` [@citetidyverse] package was used to generate graphs.
+After loading the dataset using the R programming language [@citeR] to do data analyse with the following package:  `opendatatoronto` [@citeopendatatoronto],  `tidyverse` [@citetidyverse],  `here` [@citehere], `knitr` [@citeknitr].
 
 ### Sample of part of cleaned data
 
