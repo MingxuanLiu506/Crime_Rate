@@ -60,7 +60,7 @@ The dataset used in this analysis is Neighbourhood Crime Rates published by Toro
 
 The crime data in this dataset is broken down by the different neighbourhoods of Toronto into different types of crime such as assault, auto theft, burglary, robbery, theft, homicide, etc. In addition, the crime rate in this data is calculated according to Statistics Canada's standard that the number of crimes per 100,000 population * per year [@citeopendatatoronto].
 
-The variables included in this analysis are "crime type", referring to various forms of crime and violation, which are called THEFTOVER_RATE_year and ASSAULT_RATE_year in the original data. In addition, the "population number" is used as the comparison data, which is called "POPULATION_2023" in the original data.
+The variables or measurements included in this analysis are "crime type", referring to various forms of crime and violation, which are called THEFTOVER_RATE_year and ASSAULT_RATE_year in the original data. In addition, the "population number" is used as the comparison data, which is called "POPULATION_2023" in the original data.
 
 The R programming language [@citeR] and `tidyverse` [@citetidyverse] were used to simulate and test the data set. Then, use `opendatatoronto`[@citeopendatatoronto] and `tidyverse` [@citetidyverse] to download Neighbourhood Crime Rates data. Finally, `tidyverse`[@citetidyverse] is used to clean up the original data, select the required data information to clean up the data that does not meet the requirements, and test the cleaned data again.
 
