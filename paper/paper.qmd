@@ -6,7 +6,7 @@ author:
 thanks: "Code and data are available at: https://github.com/MingxuanLiu506/Crime_Rate.git"
 date: 09-21-2024
 date-format: long
-abstract: "This paper focuses on the temporal and spatial trends of burglary and assault crime rates in different neighborhood in Toronto from 2014 to 2023. Through analyzing the data Neighbourhood Crime Rates, it is found that there are significant differences in robbery and attack rates in different regions and different time periods. And crime in some areas continues to increase, while in others it fluctuates or decreases. In addition, it is worth noting that there is also a correlation between population size and assault rates. These findings provide valuable insights for local governments and law enforcement agencies to implement targeted crime prevention strategies, as well as serve as reference examples when similar situations occur in other areas."
+abstract: "This paper focuses on the temporal and spatial trends of burglary and assault crime rates in different neighborhood in Toronto from 2014 to 2023. Through analyzing the data Neighbourhood Crime Rates, it is found that there are significant differences in theft and assault rates in different regions and different time periods. And crime in some areas continues to increase, while in others it fluctuates or decreases. In addition, it is worth noting that there is also a correlation between population size and assault rates. These findings provide valuable insights for local governments and law enforcement agencies to implement targeted crime prevention strategies, as well as serve as reference examples when similar situations occur in other areas."
 format: pdf
 toc: true
 number-sections: true
